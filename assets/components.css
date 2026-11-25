@@ -1,4 +1,10 @@
 /* Reusable components: buttons, tables, dates, formulae, resources and people. */
+@media (min-width: 721px) {
+  .section-body > p {
+    text-align: justify;
+    text-align-last: left;
+  }
+}
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
