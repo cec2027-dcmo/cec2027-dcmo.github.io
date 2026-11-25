@@ -1,0 +1,291 @@
+<!doctype html>
+<!-- 自动生成：修改 src/sections 或 src/layout.html 后运行 node tools/build.mjs。 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proposed IEEE CEC 2027 competition on dynamic constrained multiobjective optimization. DCF benchmarks, evaluation rules, submissions and organizers.">
+  <meta name="theme-color" content="#152b50">
+  <title>DCMO Competition · IEEE CEC 2027 · Proposed</title>
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/layout.css">
+  <link rel="stylesheet" href="assets/components.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead" id="top">
+    <div class="container masthead-inner">
+      <a class="conference-logo" href="https://ieeecec.org/2027/" aria-label="IEEE CEC 2027 conference website">
+        <img src="assets/cec2027-logo.png" width="2067" height="697" alt="IEEE CEC 2027">
+      </a>
+      <p class="masthead-caption">2027 IEEE Congress on Evolutionary Computation<br><span>Edinburgh, Scotland, UK · July 25–28, 2027</span></p>
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Page sections">
+    <div class="container nav-inner">
+      <a class="nav-home" href="#top">DCMO 2027</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#benchmarks">Test problems</a></li>
+        <li><a href="#protocol">Rules</a></li>
+        <li><a href="#ranking">Ranking</a></li>
+        <li><a href="#submission">Submission</a></li>
+        <li><a href="#dates">Dates</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main id="main">
+    <!-- Section: hero -->
+<section class="hero" aria-labelledby="page-title">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Proposed competition · IEEE CEC 2027</p>
+      <h1 id="page-title">Dynamic Constrained<br>Multiobjective Optimization</h1>
+      <p class="hero-description">This competition aims to promote research on dynamic constrained multiobjective optimization (DCMO).</p>
+      <div class="hero-actions"><a class="button button-primary" href="#downloads">Benchmark resources</a><a class="button button-secondary" href="#submission">Submission guidelines</a></div>
+      <p class="hero-status">The competition will launch following acceptance of the proposal.</p>
+    </div>
+    <aside class="hero-details" aria-label="Competition at a glance">
+      <p class="eyebrow">At a glance</p>
+      <dl>
+        <div><dt>Test suite</dt><dd>DCF1–DCF10</dd></div>
+        <div><dt>Performance metrics</dt><dd>MIGD &amp; MHV</dd></div>
+        <div><dt>Planned results deadline</dt><dd><time datetime="2027-05-31">31 May 2027</time></dd></div>
+      </dl>
+      <a href="#protocol">View competition protocol</a>
+    </aside>
+  </div>
+</section>
+    <div class="container content">
+      <!-- Section: overview -->
+<section class="section" id="overview" aria-labelledby="overview-title">
+  <div class="section-heading"><p class="eyebrow">About the competition</p><h2 id="overview-title">Overview and Aim</h2></div>
+  <div class="section-body">
+    <p>In the past decade, dynamic constrained multiobjective optimization has attracted increasing research interest. Such problems are widely encountered in real-world applications, including scheduling optimization and resource allocation, where multiple objectives and constraints may vary over time.</p>
+    <p>Compared with dynamic multiobjective optimization problems or constrained multiobjective optimization problems alone, dynamic constrained multiobjective optimization problems (DCMOPs) exhibit more complex characteristics and pose additional challenges. Different environmental changes require effective response strategies, while changing constraints and limited response time make it difficult to identify high-quality feasible solution sets.</p>
+    <p>This competition aims to promote research on dynamic constrained multiobjective optimization (DCMO). Based on a test suite with various characteristics, researchers can better understand the strengths and weaknesses of dynamic constrained multiobjective evolutionary algorithms (DCMOEAs).</p>
+  </div>
+</section>
+      <!-- Section: benchmarks -->
+<section class="section" id="benchmarks" aria-labelledby="benchmarks-title">
+  <div class="section-heading"><p class="eyebrow">The benchmark suite</p><h2 id="benchmarks-title">Test Problems</h2></div>
+  <div class="section-body">
+    <p>To promote the research on dynamic constrained multiobjective optimization (DCMO), 10 benchmark functions are employed from DCF <a href="#ref-dcf">[1]</a>, covering diverse characteristics which exactly represent different real-world scenarios, for example, continuity-disconnection, time-dependent PF/PS geometries, dynamic infeasible region, small feasible region, and so on.</p>
+    <p>The detailed definitions of these 10 test problems can be found in <cite>Benchmark Problems for CEC2023 Competition on Dynamic Constrained Multiobjective Optimization</cite> <a href="#ref-dcf">[1]</a>. The technical report can be downloaded from the following website:</p>
+    <p><a class="resource-link" href="https://www.tech.dmu.ac.uk/~syang/TF-ECiDUE/TR-CEC2023-DCMO-Competition.pdf">DCF benchmark technical report (PDF)</a></p>
+    <p>All the benchmark functions have been implemented in MATLAB code based on PlatEMO <a href="#ref-platemo">[2]</a>. The existing implementations are available in the <a href="https://github.com/gychen94/DCMO">DCMO benchmark repository</a>.</p>
+    <p class="note">The original report provides the benchmark definitions. Evaluation budgets and submission requirements for this proposed competition are specified below.</p>
+  </div>
+</section>
+      <!-- Section: protocol -->
+<section class="section" id="protocol" aria-labelledby="protocol-title">
+  <div class="section-heading"><p class="eyebrow">Experimental settings</p><h2 id="protocol-title">Competition Protocol</h2></div>
+  <div class="section-body">
+    <h3>General settings</h3>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="General experimental settings">
+      <table>
+        <caption>Settings for each participating algorithm</caption>
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Setting</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Population size</th><td>100</td></tr>
+          <tr><th scope="row">Number of variables</th><td>10</td></tr>
+          <tr><th scope="row">Frequency of change (τ<sub>t</sub>)</th><td>10 (fast changing environments); 30 (slow changing environments)</td></tr>
+          <tr><th scope="row">Severity of change (n<sub>t</sub>)</th><td>5 (severe changing environments); 10 (moderate changing environments)</td></tr>
+          <tr><th scope="row">Number of changes</th><td>60</td></tr>
+          <tr><th scope="row">Number of independent runs</th><td>20</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Stopping criterion</h3>
+    <p>Stopping criterion: a maximum number of <span class="inline-formula">100(60τ<sub>t</sub> + 60)</span> fitness evaluations, where 6000 fitness evaluations are given before the first environmental change occurs. After the first environmental change, a maximum of <span class="inline-formula">100τ<sub>t</sub></span> fitness evaluations are allocated to each subsequent environment, corresponding to 1000 and 3000 fitness evaluations for τ<sub>t</sub> = 10 and τ<sub>t</sub> = 30, respectively.</p>
+    <h3>Environmental change detection and evaluation budgets</h3>
+    <p>In each environment, at most 10% of the population (i.e., 10 individuals) can be used solely for environmental change detection, and the corresponding fitness evaluations are not counted toward the given maximum number of fitness evaluations.</p>
+    <p>Except for the above change-detection evaluations, all fitness evaluations, including population initialization, offspring evaluation, environmental response, and reevaluation of existing solutions, must be counted toward the corresponding environmental budget.</p>
+    <p>All participants must strictly follow the above rules on fitness evaluations to ensure the fairness of the competition. Any participant found to have cheated will be disqualified from the competition.</p>
+  </div>
+</section>
+      <!-- Section: ranking -->
+<section class="section" id="ranking" aria-labelledby="ranking-title">
+  <div class="section-heading"><p class="eyebrow">Performance assessment</p><h2 id="ranking-title">Metrics and Ranking</h2></div>
+  <div class="section-body">
+    <div class="metric-pair">
+      <div><h3>MIGD</h3><p>The MIGD is used to evaluate the performance of an optimizer on each DCMOP. A smaller MIGD value indicates a better performance of the corresponding optimizer.</p></div>
+      <div><h3>MHV</h3><p>The MHV is used to measure the comprehensive performance of an optimizer on DCMOPs. A larger MHV value indicates a better performance of the corresponding optimizer.</p></div>
+    </div>
+    <h3>Ranking Calculation Rules</h3>
+    <p>Based on the ranking of competition algorithm in the above two indicators, a final Score is calculated to evaluate the performance of the algorithm. The sum of ranks (SR) is calculated based on the rankings obtained using the two performance metrics:</p>
+    <div class="equation" tabindex="0" role="region" aria-label="Sum of ranks formula">
+      <math display="block" aria-label="SR equals the sum of MIGD ranks over 40 instances plus the sum of MHV ranks over 40 instances">
+        <mrow>
+          <mi mathvariant="normal">SR</mi><mo>=</mo>
+          <munderover>
+            <mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mn>40</mn>
+          </munderover>
+          <msub><mi>rank</mi><mi mathvariant="normal">MIGD</mi></msub>
+          <mo>+</mo>
+          <munderover>
+            <mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mn>40</mn>
+          </munderover>
+          <msub><mi>rank</mi><mi mathvariant="normal">MHV</mi></msub>
+        </mrow>
+      </math>
+    </div>
+    <p>where <em>rank</em> is obtained by the mean and standard deviation value, which is calculated based on the given test function and two performance indicators. The 40 test instances correspond to 10 problems with four combinations of change frequency and severity. When SR values of different algorithms are obtained, scores can be calculated:</p>
+    <div class="equation" tabindex="0" role="region" aria-label="Competition score formula">
+      <math display="block" aria-label="Score equals 100 times one minus the normalized SR difference multiplied by N minus one over N">
+        <mrow>
+          <mi mathvariant="normal">Score</mi><mo>=</mo><mo>(</mo><mn>1</mn><mo>−</mo>
+          <!-- Normalize SR between the minimum and maximum across algorithms. -->
+          <mfrac>
+            <mrow>
+              <mi mathvariant="normal">SR</mi><mo>−</mo>
+              <msub><mi mathvariant="normal">SR</mi><mi mathvariant="normal">min</mi></msub>
+            </mrow>
+            <mrow>
+              <msub><mi mathvariant="normal">SR</mi><mi mathvariant="normal">max</mi></msub>
+              <mo>−</mo>
+              <msub><mi mathvariant="normal">SR</mi><mi mathvariant="normal">min</mi></msub>
+            </mrow>
+          </mfrac>
+          <mo>×</mo>
+          <!-- This factor gives the lowest-scoring algorithm 100/N points. -->
+          <mfrac><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mi>N</mi></mfrac>
+          <mo>)</mo><mo>×</mo><mn>100</mn>
+        </mrow>
+      </math>
+    </div>
+    <p>where <em>N</em> denotes the total number of valid participating algorithms, and SR<sub>min</sub> and SR<sub>max</sub> denote the minimum and maximum SR values among these algorithms, respectively. When SR<sub>max</sub> &gt; SR<sub>min</sub>, the algorithm with the smallest SR receives a score of 100, while the algorithm with the largest SR receives a score of 100/<em>N</em>.</p>
+  </div>
+</section>
+      <!-- Section: submission -->
+<section class="section" id="submission" aria-labelledby="submission-title">
+  <div class="section-heading"><p class="eyebrow">Taking part</p><h2 id="submission-title">Submission Guidelines</h2></div>
+  <div class="section-body">
+    <h3>Competition results</h3>
+    <p>To submit the result, it is expected to format the submitted competition results in tables as the same as the following table. Please make sure that the submitted results are of high readability, including the mean and standard deviation of the MIGD/MHV values for each test instance.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Results submission example">
+      <table class="results-table">
+        <caption>Example format only; repeat for DCF1–DCF10 and all four parameter combinations</caption>
+        <thead><tr><th scope="col">Problem</th><th scope="col">(τ<sub>t</sub>, n<sub>t</sub>)</th><th scope="col">MIGD mean(std.)</th><th scope="col">MHV mean(std.)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">DCF1</th><td>10, 5</td><td>1.1111E-2(1.1111E-3)</td><td>1.1111E-2(1.1111E-3)</td></tr>
+          <tr><th scope="row">DCF1</th><td>10, 10</td><td>…</td><td>…</td></tr>
+          <tr><th scope="row">DCF1</th><td>30, 5</td><td>…</td><td>…</td></tr>
+          <tr><th scope="row">DCF1</th><td>30, 10</td><td>…</td><td>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For all participants, please also submit the corresponding source code which should allow the generation of reproducible results. Besides, it would be nice if you can submit a document that gives a brief illustration to the algorithm and corresponding parameter settings.</p>
+    <div class="submission-contact"><p><strong>Results recipient:</strong> Guoyu Chen<br><a href="mailto:chenguoyumail@163.com">chenguoyumail@163.com</a></p><p><strong>Planned deadline:</strong><br><time datetime="2027-05-31">31 May 2027</time></p></div>
+    <h3>Paper submissions</h3>
+    <p>Participants planning to submit a paper to IEEE CEC 2027 should follow the <a href="https://ieeecec.org/2027/">conference submission guidelines and deadlines</a>. Competition results should be sent separately to the results recipient above.</p>
+    <p>For enquiries about this proposed competition, please contact <a href="mailto:sqt2500402045@student.cumtb.edu.cn">Li Lu</a>.</p>
+  </div>
+</section>
+      <!-- Section: dates -->
+<section class="section" id="dates" aria-labelledby="dates-title">
+  <div class="section-heading"><p class="eyebrow">Schedule</p><h2 id="dates-title">Important Dates</h2></div>
+  <div class="section-body">
+    <h3>Competition</h3>
+    <dl class="date-list">
+      <div><dt>Competition launch</dt><dd>Following acceptance of the competition proposal</dd></div>
+      <div class="key-date"><dt>Results submission deadline</dt><dd><time datetime="2027-05-31">31 May 2027</time> <span class="text-label">Planned</span></dd></div>
+      <div><dt>Announcement of competition results</dt><dd>During IEEE CEC 2027 (July 25–28, 2027), subject to the final conference program</dd></div>
+    </dl>
+    <h3>Conference paper submissions</h3>
+    <dl class="date-list">
+      <div><dt>Full paper submission</dt><dd><time datetime="2027-02-28">28 February 2027</time></dd></div>
+      <div><dt>Notification of acceptance</dt><dd><time datetime="2027-04-07">7 April 2027</time></dd></div>
+      <div><dt>Final paper submission</dt><dd><time datetime="2027-05-01">1 May 2027</time></dd></div>
+      <div><dt>Conference dates</dt><dd>July 25–28, 2027 · Edinburgh, Scotland, UK</dd></div>
+    </dl>
+    <p class="note">Conference dates are listed on the <a href="https://ieeecec.org/2027/">IEEE CEC 2027 website</a>. The competition schedule above is proposed.</p>
+  </div>
+</section>
+      <!-- Section: downloads -->
+<section class="section" id="downloads" aria-labelledby="downloads-title">
+  <div class="section-heading"><p class="eyebrow">Files and resources</p><h2 id="downloads-title">Downloads</h2></div>
+  <div class="section-body">
+    <p>The benchmark technical report and MATLAB code are available below. The CEC 2027 competition guidelines will be added when available.</p>
+    <ul class="download-list">
+      <li>
+        <div>
+          <h3><a href="https://www.tech.dmu.ac.uk/~syang/TF-ECiDUE/TR-CEC2023-DCMO-Competition.pdf">Benchmark Technical Report</a></h3>
+          <p>Original CEC2023 technical report with definitions of DCF1–DCF10 and benchmark characteristics.</p>
+        </div>
+        <span class="file-type">PDF</span>
+      </li>
+      <li>
+        <div>
+          <h3><a href="https://github.com/gychen94/DCMO">MATLAB Benchmark Code</a></h3>
+          <p>MATLAB implementations of the DCF benchmark problems.</p>
+        </div>
+        <span class="file-type">GitHub</span>
+      </li>
+      <li>
+        <div>
+          <h3>CEC 2027 Competition Guidelines</h3>
+          <p>Evaluation budgets, scoring rules and submission requirements for this competition.</p>
+        </div>
+        <span class="availability">Coming soon</span>
+      </li>
+    </ul>
+  </div>
+</section>
+      <!-- Section: organizers -->
+<section class="section" id="organizers" aria-labelledby="organizers-title">
+  <div class="section-heading"><p class="eyebrow">People and contact</p><h2 id="organizers-title">Competition Organizers</h2></div>
+  <div class="section-body organizer-grid">
+    <article class="organizer">
+      <h3>Yinan Guo</h3>
+      <p>School of Mechanical Electronic and Information Engineering<br>
+        China University of Mining and Technology (Beijing)<br>Beijing, China</p>
+      <a href="mailto:nanfly@126.com">nanfly@126.com</a>
+    </article>
+    <article class="organizer">
+      <h3>Guoyu Chen</h3>
+      <p class="organizer-role">Results recipient</p>
+      <p>School of Artificial Intelligence<br>
+        Anhui University of Science and Technology<br>Hefei, China</p>
+      <a href="mailto:chenguoyumail@163.com">chenguoyumail@163.com</a>
+    </article>
+    <article class="organizer">
+      <h3>Xiao Yang</h3>
+      <p>School of Information and Control Engineering<br>
+        China University of Mining and Technology<br>Xuzhou, China</p>
+      <a href="mailto:yangxiao_cumt@cumt.edu.cn">yangxiao_cumt@cumt.edu.cn</a>
+    </article>
+    <article class="organizer">
+      <h3>Li Lu</h3>
+      <p class="organizer-role">Contact person</p>
+      <p>Master’s Student<br>
+        School of Mechanical and Electrical Engineering<br>
+        China University of Mining and Technology (Beijing)<br>Beijing, China</p>
+      <a href="mailto:sqt2500402045@student.cumtb.edu.cn">sqt2500402045@student.cumtb.edu.cn</a>
+    </article>
+  </div>
+</section>
+      <!-- Section: references -->
+<section class="section references" id="references" aria-labelledby="references-title">
+  <div class="section-heading"><h2 id="references-title">References</h2></div>
+  <div class="section-body">
+    <ol class="reference-list">
+      <li id="ref-dcf">Y. Guo, G. Chen, C. Yue, J. Liang, Y. Wang, and S. Yang, <cite>Benchmark Problems for CEC2023 Competition on Dynamic Constrained Multiobjective Optimization</cite>, technical report, December 2022. <a href="https://www.tech.dmu.ac.uk/~syang/TF-ECiDUE/TR-CEC2023-DCMO-Competition.pdf">Report</a> · <a href="https://www.tech.dmu.ac.uk/~syang/publications.html">Publication record</a>.</li>
+      <li id="ref-platemo">Y. Tian, R. Cheng, X. Zhang, and Y. Jin, “PlatEMO: A MATLAB Platform for Evolutionary Multi-Objective Optimization [Educational Forum],” <cite>IEEE Computational Intelligence Magazine</cite>, vol. 12, no. 4, pp. 73–87, 2017.</li>
+    </ol>
+  </div>
+</section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>DCMO · IEEE CEC 2027</strong><p>Proposed competition · Last updated November 25, 2026</p></div>
+      <div class="footer-links"><a href="mailto:sqt2500402045@student.cumtb.edu.cn">Contact Li Lu</a><a href="https://ieeecec.org/2027/">Conference website</a><a href="#top">Back to top</a></div>
+    </div>
+  </footer>
+</body>
+</html>
